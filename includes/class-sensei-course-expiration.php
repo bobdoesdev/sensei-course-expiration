@@ -7,7 +7,7 @@ if ( !class_exists( 'WC_SC_Checkout_Fields' ) ) {
 
 		public function __construct(){
 			add_action('wp', array($this, 'cron_activate') );
-			add_action('sce_course_removal_cron', 'remove_user_from_course');
+			add_action('sce_course_removal_cron', array($this, 'remove_user_from_course') );
 		}
 		
 		public function cron_activate(){
